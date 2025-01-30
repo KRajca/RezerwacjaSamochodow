@@ -1,0 +1,18 @@
+﻿@model Car
+
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card shadow p-4" style="width: 400px;">
+        <h2 class="text-center">Car Details</h2>
+        <dl class="row">
+            <dt class="col-sm-4">Brand:</dt>
+            <dd class="col-sm-8">@Model.Brand</dd>
+            <dt class="col-sm-4">Model:</dt>
+            <dd class="col-sm-8">@Model.Model</dd>
+            <dt class="col-sm-4">Year:</dt>
+            <dd class="col-sm-8">@Model.Year</dd>
+            <dt class="col-sm-4">Price/Day:</dt>
+            <dd class="col-sm-8">@Model.PricePerDay</dd>
+        </dl>
+        <a asp-action="Index" class="btn btn-secondary w-100">Back to List</a>
+    </div>
+</div>

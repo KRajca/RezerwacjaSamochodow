@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container text-center mt-5">
+    <h1 class="display-3 fw-bold text-primary">Welcome to Kamyk's Car Clinic</h1>
+    <p class="lead text-muted">Your trusted place to rent and manage cars easily.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <img src="https://purepng.com/public/uploads/large/purepng.com-audi-r8audicars-961524670148fabn4.png" class="img-fluid rounded shadow-lg" alt="Luxury Car">
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <div>
+                <p class="text-dark">
+                    We offer a seamless way to rent vehicles at competitive prices.
+                    Whether you're looking for a short trip or a long-term rental, we've got you covered.
+                </p>
+                <a asp-controller="Cars" asp-action="Index" class="btn btn-primary btn-lg mt-3">Browse Cars</a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h3 class="text-success">🚗 Wide Selection</h3>
+            <p>Choose from a variety of cars, from economy to luxury models.</p>
+        </div>
+        <div class="col-md-4">
+            <h3 class="text-danger">🔒 Secure Reservations</h3>
+            <p>Book your car safely with our trusted system.</p>
+        </div>
+        <div class="col-md-4">
+            <h3 class="text-warning">📞 24/7 Support</h3>
+            <p>We're here to help you anytime you need assistance.</p>
+        </div>
+    </div>
+</div>

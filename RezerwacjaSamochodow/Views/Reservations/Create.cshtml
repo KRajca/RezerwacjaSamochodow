@@ -1,0 +1,35 @@
+﻿@model ReservationDto
+
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card shadow p-4" style="width: 400px;">
+        <h2 class="text-center">Create Reservation</h2>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <form asp-action="CreateFilter" method="post">
+            <div class="mb-3">
+                <label asp-for="StartDate" class="form-label"></label>
+                <input asp-for="StartDate" class="form-control" type="date" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="EndDate" class="form-label"></label>
+                <input asp-for="EndDate" class="form-control" type="date" />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Filter Available Cars</button>
+        </form>
+
+        @if (ViewData["CarId"] != null)
+        {
+            <form asp-action="Create" method="post">
+                <input type="hidden" asp-for="StartDate" value="@ViewBag.StartDate" />
+                <input type="hidden" asp-for="EndDate" value="@ViewBag.EndDate" />
+
+                <div class="mb-3">
+                    <label asp-for="CarId" class="form-label">Available Cars</label>
+                    <select asp-for="CarId" asp-items='(IEnumerable<SelectListItem>)ViewData["CarId"]' class="form-control"></select>
+                    <span asp-validation-for="CarId" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">Reserve</button>
+            </form>
+        }
+    </div>
+</div>

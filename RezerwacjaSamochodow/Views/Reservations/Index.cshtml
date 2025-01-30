@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Reservation>
+
+<div class="container mt-5">
+    <h2 class="text-center">Reservations</h2>
+    <table class="table table-hover shadow">
+        <thead class="table-dark">
+            <tr>
+                <th>Car</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>User</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model)
+            {
+                <tr>
+                    <td>@reservation.Car.Brand</td>
+                    <td>@reservation.StartDate.ToShortDateString()</td>
+                    <td>@reservation.EndDate.ToShortDateString()</td>
+                    <td>@reservation.User.Email</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@reservation.Id" class="btn btn-info btn-sm">Details</a>
+                        <a asp-action="Edit" asp-route-id="@reservation.Id" class="btn btn-primary btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@reservation.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a asp-action="Create" class="btn btn-success">Create New Reservation</a>
+    </div>
+</div>
